@@ -1,0 +1,54 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-info text-white">
+      <h4>Müşteri Kayıt Formu</h4>
+    </div>
+    <div class="card-body">
+      <form>
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Ad</label>
+            <input type="text" class="form-control" [(ngModel)]="customerRequest.firstName" name="firstName" placeholder="Örn: Ali" required>
+          </div>
+          
+          <div class="col-md-6">
+            <label class="form-label">Soyad</label>
+            <input type="text" class="form-control" [(ngModel)]="customerRequest.lastName" name="lastName" placeholder="Örn: Yılmaz" required>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">TC Kimlik No</label>
+            <input type="text" class="form-control" [(ngModel)]="customerRequest.tckn" name="tckn" maxlength="11" placeholder="11 Haneli TCKN" required>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Doğum Tarihi</label>
+            <input type="date" class="form-control" [(ngModel)]="customerRequest.birthOfDate" name="birthDate" required>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Adres ID</label>
+            <input type="number" class="form-control" [(ngModel)]="customerRequest.addressId" name="addressId" placeholder="Örn: 5">
+            <small class="text-muted">Mevcut bir adres ID'si giriniz.</small>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label">Hesap (Account) ID</label>
+            <input type="number" class="form-control" [(ngModel)]="customerRequest.accountId" name="accountId" placeholder="Örn: 10">
+            <small class="text-muted">Mevcut bir hesap ID'si giriniz.</small>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-info text-white w-100" (click)="onSave()">
+            Müşteriyi Kaydet
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

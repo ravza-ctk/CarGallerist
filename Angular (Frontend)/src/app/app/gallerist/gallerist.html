@@ -1,0 +1,50 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h3>Galeri Sahibi Ekle</h3>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        
+        <div class="mb-3">
+          <label for="firstName" class="form-label">Ad</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="firstName" 
+            [(ngModel)]="requestModel.firstName" 
+            name="firstName"
+            placeholder="Adınızı giriniz"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label for="lastName" class="form-label">Soyad</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="lastName" 
+            [(ngModel)]="requestModel.lastName" 
+            name="lastName"
+            placeholder="Soyadınızı giriniz"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label for="addressId" class="form-label">Adres ID</label>
+          <input 
+            type="number" 
+            class="form-control" 
+            id="addressId" 
+            [(ngModel)]="requestModel.addressId" 
+            name="addressId"
+            placeholder="Bağlı olduğu adres ID'sini giriniz"
+            required>
+          <small class="text-muted">Not: Mevcut bir adres ID'si girilmelidir.</small>
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+      </form>
+    </div>
+  </div>
+</div>

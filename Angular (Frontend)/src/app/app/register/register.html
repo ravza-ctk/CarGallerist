@@ -1,0 +1,47 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+    
+    <div class="card-header bg-success text-white text-center">
+      <h4>Kayıt Ol</h4>
+    </div>
+    
+    <div class="card-body p-4">
+      <form (ngSubmit)="onRegister()">
+        
+        <div class="mb-3">
+          <label for="regUsername" class="form-label">Kullanıcı Adı Belirle</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="regUsername" 
+            [(ngModel)]="registerRequest.username" 
+            name="username" 
+            placeholder="Kullanıcı adı"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label for="regPassword" class="form-label">Şifre Belirle</label>
+          <input 
+            type="password" 
+            class="form-control" 
+            id="regPassword" 
+            [(ngModel)]="registerRequest.password" 
+            name="password" 
+            placeholder="********"
+            required>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-success">Kayıt Ol</button>
+        </div>
+
+      </form>
+    </div>
+    
+    <div class="card-footer text-center text-muted">
+      <small>Zaten hesabın var mı? <a routerLink="/login" class="text-primary">Giriş Yap</a></small>
+    </div>
+
+  </div>
+</div>

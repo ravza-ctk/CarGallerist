@@ -1,0 +1,51 @@
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow-lg" style="width: 100%; max-width: 400px;">
+    
+    <div class="card-header bg-primary text-white text-center">
+      <h4>Giriş Yap</h4>
+    </div>
+    
+    <div class="card-body p-4">
+      <form (ngSubmit)="onLogin()">
+        
+        <div class="mb-3">
+          <label for="username" class="form-label">Kullanıcı Adı</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="username" 
+            [(ngModel)]="loginRequest.username" 
+            name="username" 
+            placeholder="Kullanıcı adınızı giriniz"
+            required>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Şifre</label>
+          <input 
+            type="password" 
+            class="form-control" 
+            id="password" 
+            [(ngModel)]="loginRequest.password" 
+            name="password" 
+            placeholder="********"
+            required>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary">Giriş Yap</button>
+        </div>
+
+      </form>
+    </div>
+    
+    <div class="card-footer text-center text-muted">
+  <small>Hesabın yok mu? 
+    <a routerLink="/register" class="text-primary" style="text-decoration: none; cursor: pointer;">
+      Kayıt Ol
+    </a>
+  </small>
+</div>
+
+  </div>
+</div>

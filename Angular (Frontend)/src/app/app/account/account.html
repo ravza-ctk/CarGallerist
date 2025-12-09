@@ -1,0 +1,45 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header bg-warning text-dark">
+      <h4>Yeni Hesap Oluştur</h4>
+    </div>
+    <div class="card-body">
+      <form>
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Hesap Numarası</label>
+            <input type="text" class="form-control" [(ngModel)]="accountRequest.accountNo" name="accNo" placeholder="12345678" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Bakiye (Miktar)</label>
+            <input type="number" class="form-control" [(ngModel)]="accountRequest.amount" name="amount" placeholder="0.00" required>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">IBAN</label>
+            <input type="text" class="form-control" [(ngModel)]="accountRequest.iban" name="iban" placeholder="TR..." required>
+          </div>
+          
+          <div class="col-md-6">
+           <label class="form-label">Para Birimi</label>
+           <select class="form-select" [(ngModel)]="accountRequest.currencyTypeId" name="curr">
+            <option value="0">Seçiniz...</option>
+            <option *ngFor="let curr of currencyList" [value]="curr.id">
+              {{ curr.value }} 
+
+              
+    </option>
+
+  </select>
+          </div>
+        </div> <button type="button" class="btn btn-warning w-100" (click)="onSave()">
+          Hesabı Kaydet
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
